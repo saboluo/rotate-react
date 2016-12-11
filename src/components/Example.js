@@ -4,12 +4,35 @@ import '../styles/example.css';
 let Com = React.Component;
 
 class Example extends Com{
+	constructor(){
+		super();
+		this.b1 = this.b1.bind(this);
+		this.b2 = this.b2.bind(this);
+		this.b3 = this.b3.bind(this);
+	}
+	b1(){
+		this._r.goAnim(true,500,'160deg');
+	}
+	b2(){
+		this._r.goAnim(true,500,'160deg',true);
+	}
+	b3(){
+		this._r.stop();
+	}
+	endCall(deg){
+		console.log(deg);
+	}
 	render(){
 		return(
-			<Rotate className = "example">
-				<div>this is page1 test</div>
-				<div>this is page2 test</div>
-			</Rotate>
+			<div>
+				<Rotate ref={(r)=>{this._r = r}} className = "example" endCallBack = {this.endCall}>
+					<div>this is page1 test</div>
+					<div>this is page2 test</div>
+				</Rotate>
+				<button ref = "btn1" onClick = {this.b1}>go1</button>
+				<button ref = "btn2" onClick = {this.b2}>go1</button>
+				<button ref = "btn3" onClick = {this.b3}>go1</button>
+			</div>
 			)
 	}
 }
