@@ -213,10 +213,10 @@ class RotateCom extends Com{
 		let child_1 = ( this.props.children[0] ? this.props.children[0] : "" );
 		let child_2 = ( this.props.children[1] ? this.props.children[1] : "" );
 		return (
-			<div className = "wrap">
+			<div className = {"wrap "}>
 				<div className = {"touch " + className} ref = {(touch)=>{this._touch = touch}} style = {styleObj}>
-					<div className = "front-face hide-over bfhide">page1 {child_1}</div>
-					<div className = "back-face hide-over bfhide">page2 {child_2}</div>
+					<div className = "front-face hide-over bfhide">{child_1}</div>
+					<div className = "back-face hide-over bfhide">{child_2}</div>
 				</div>
 			</div>
 			);
