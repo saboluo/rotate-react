@@ -17,6 +17,7 @@ html,body {
   transform:translate3d(0,0,0);
   transform-style :preserve-3d;
   background: #ccc;
+  cursor: pointer;
 }
 .hide-over{
   overflow: hidden;

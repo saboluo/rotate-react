@@ -11,16 +11,25 @@ class Example extends Com{
 		this.b3 = this.b3.bind(this);
 	}
 	b1(){
-		this._r.goAnim(true,500,'160deg');
+		this._r.goAnim(500,'160deg');
 	}
 	b2(){
-		this._r.goAnim(true,500,'160deg',true);
+		this._r.goAnim(500,'160deg',true);
 	}
 	b3(){
 		this._r.stop();
 	}
-	endCall(deg){
-		console.log(deg);
+	endCall(deg,modal){
+		let d = deg%360;
+		let k;
+		if(d > 10 || d < -10){
+			if(d<0){
+				k = -d;
+			}else{
+				k = 360 - d;
+			}
+			modal.goAnim(700,k+"deg");
+		}
 	}
 	render(){
 		return(
